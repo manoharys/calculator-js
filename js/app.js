@@ -23,10 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
       let btn = document.createElement('div');
       btn.innerHTML = keys[i][j];
       btn.classList.add('btn')
+      btn.addEventListener('click', btnHit);
       div.appendChild(btn);
     }
     calculator.appendChild(div);
   }
-
-
 })
+
+function btnHit(e) {
+  console.log(this.innerText);
+
+  let btnValue = this.innerText;
+  let myValue = output.innerText;
+  let lastChar = myValue.substring(myValue.length - 1);
+  if (myValue === "0") {
+    myValue = "";
+  }
+  if (operator.includes(btnValue)) {
+    if (operator.includes(lastChar)) {
+      myValue = myValue.substring(0, myValue - 1);
+    } else {
+      myValue = eval(myValue);
+    }
+  }
+  myValue += btnValue;
+  output.innerText = myValue;
+
+
+}
