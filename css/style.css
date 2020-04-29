@@ -18,9 +18,25 @@ body{
 
 .output{
     
-    height: 50px;
+    height: 60px;
     background-color: white;
     line-height: 50px;
     text-align: right;
-    
+    margin-bottom: 10px;
+}
+.btn{
+    height: 100px;
+    width:93px;
+    padding: 5px;
+    line-height: 50px;
+    font-size: 2rem;
+    vertical-align: bottom;
+    text-align: center;
+    background-color: rgb(192, 168, 168);
+    margin: 2px;
+    display:inline-block;
+}
+.row{
+    width: 100%;
+    display: block;
 }
