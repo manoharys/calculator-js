@@ -35,19 +35,28 @@ function btnHit(e) {
 
   let btnValue = this.innerText;
   let myValue = output.innerText;
-  let lastChar = myValue.substring(myValue.length - 1);
+
   if (myValue === "0") {
     myValue = "";
   }
-  if (operator.includes(btnValue)) {
-    if (operator.includes(lastChar)) {
-      myValue = myValue.substring(0, myValue - 1);
-    } else {
-      myValue = eval(myValue);
+  if (btnValue == '=') {
+    myValue = eval(myValue);
+  } else {
+    let lastChar = myValue.substring(myValue.length - 1);
+    if (operator.includes(btnValue)) {
+      if (operator.includes(lastChar)) {
+        myValue = myValue.substring(0, myValue - 1);
+      } else {
+        myValue = eval(myValue);
+      }
     }
+    myValue += btnValue;
   }
-  myValue += btnValue;
+  if (btnValue == "C") {
+    myValue = "0";
+  }
   output.innerText = myValue;
+
 
 
 }
