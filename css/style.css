@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+}
+
+.myCalc{
+    width: 400px;
+    height: 500px;
+    background-color: lightgray;
+    padding: 5px;
+    cursor: pointer;
+}
